@@ -11,7 +11,6 @@
 ## Daftar Isi
 1. [Deskripsi Umum](#deskripsi-umum)
 2. [Penjelasan Algoritma](#penjelasan-algoritma)
-3. [Penggunaan Program](#penggunaan-program)
 
 ## Deskripsi Umum
 Tugas Besar 1 Strategi Algoritma ini bertujuan untuk mengimplementasikan bot pada permainan _Diamonds_. Permainan _Diamonds_ merupakan permainan sederhana yang memiliki objektif bagi pemain untuk mendapatkan _Diamonds_ sebanyak-banyaknya pada papan permainan.
