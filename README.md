@@ -60,12 +60,3 @@ Bot:
 - Buka http://localhost:8082/ di browser untuk melihat tampilan frontend.
 
 Catatan: Proses setup (step 1–6) hanya perlu dilakukan satu kali. Selanjutnya cukup jalankan npm run start dengan Docker aktif.
-
-## Author
-Nama Kelompok: Team7
-
-Anggota Kelompok:
-
-Khairul Rijal Syauqi         – 123140143
-Falih Faiq Fadhlurrahman     – 123140129
-Muhammad Daffansyah Desuandi – 123140127
