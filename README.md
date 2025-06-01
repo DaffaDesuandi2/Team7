@@ -18,12 +18,54 @@ Tugas Besar 1 Strategi Algoritma ini bertujuan untuk mengimplementasikan bot pad
 Bot yang dibuat akan menggunakan algoritma _**Greedy**_ dengan tujuan utama mendapatkan _Diamond_ sebanyak-banyaknya agar dapat memenangkan permainan.
 
 ## Penjelasan Algoritma
-1. Prioritaskan strategi Greedy by Value-to-Distance Ratio karena pendekatan ini mengoptimalkan jumlah poin yang diperoleh dalam setiap langkah gerakan bot. Bot akan selalu memilih diamond yang memiliki rasio nilai terhadap jarak tertinggi, sehingga setiap langkah memberikan imbal hasil (poin) terbaik. Ini memberikan efisiensi tinggi, terutama dalam pertandingan yang waktunya sangat terbatas.
+Program ini menerapkan algoritma greedy by distance dalam permainan Diamonds. Pendekatan ini bertujuan untuk mengumpulkan semua diamond dengan cara yang efisien berdasarkan jarak terpendek.
+Langkah-langkah utama algoritma:
 
-2. Jika tidak ada diamond yang memiliki rasio nilai-jarak yang menguntungkan secara signifikan, maka bot akan beralih ke pendekatan Greedy by Shortest Distance, yaitu memilih diamond terdekat tanpa memperhatikan nilainya, agar tetap bisa mengumpulkan diamond secara cepat dan memaksimalkan jumlah pengambilan.
+- Bot memulai dari posisi awal yang telah ditentukan.
+- Pada setiap iterasi, bot akan mencari diamond terdekat berdasarkan jarak Euclidean atau Manhattan.
+- Bot bergerak menuju diamond tersebut.
+- Diamond diambil, kemudian proses diulang sampai batas waktu habis
 
-3. Dalam situasi di mana tidak ada diamond yang dekat maupun yang memiliki rasio tinggi, maka bot akan menerapkan pendekatan Greedy by Chasing Distant High-Value Diamonds, yaitu mengejar diamond yang sangat jauh namun memiliki poin tinggi (misalnya red diamond), jika secara kalkulasi rasio masih lebih baik dibanding alternatif lain.
+Algoritma ini memprioritaskan solusi lokal optimal (jarak terdekat) yang diharapkan menghasilkan hasil mendekati solusi optimal secara keseluruhan.
 
-4. Jika seluruh opsi diamond memiliki rasio yang rendah atau tidak ada yang layak diambil, maka bot akan menuju red button apabila jaraknya lebih dekat dibandingkan diamond yang tersedia. Ini bertujuan untuk melakukan reset peta agar mendapatkan kemungkinan spawn diamond yang lebih menguntungkan.
+## Requirement Program dan Instalasi Tertentu
+Untuk dapat menjalankan game Diamonds dan mengembangkan bot, berikut adalah kebutuhan perangkat lunak yang harus dipasang:
+Game Engine:
+- Node.js
+- Docker Desktop
+- Yarn (dapat dipasang via npm): npm install --global yarn
 
-5. Ketika inventory bot sudah cukup terisi (misalnya ≥3 diamond), bot akan memprioritaskan untuk kembali ke base. Namun, jika di sepanjang jalur menuju base masih ada diamond yang secara rasio nilai-jarak masih menguntungkan dan inventory belum penuh, bot akan mengambil diamond tersebut terlebih dahulu. Selain itu, jika terdapat teleporter yang dapat mempersingkat total jarak ke base, maka bot akan menggunakan teleporter tersebut sebagai strategi optimalisasi rute.
+Bot:
+- Python
+
+## Command atau Langkah-langkah untuk Compile atau Build Program Menjalankan Game Engine
+
+- Download source code game engine dan extract.
+- Masuk ke direktori hasil ekstraksi: yarn
+- Setup environment variable:
+	Windows: ./scripts/copy-env.bat
+	Linux/macOS: chmod +x ./scripts/copy-env.sh
+		     ./scripts/copy-env.sh
+- Setup database:
+	Jalankan Docker Desktop
+	Jalankan: docker compose up -d database
+- Setup database:
+	Windows: ./scripts/setup-db-prisma.bat
+	Linux/macOS: chmod +x ./scripts/setup-db-prisma.sh
+		     ./scripts/setup-db-prisma.sh
+- Build dan jalankan:
+  npm run build
+  npm run start
+
+- Buka http://localhost:8082/ di browser untuk melihat tampilan frontend.
+
+Catatan: Proses setup (step 1–6) hanya perlu dilakukan satu kali. Selanjutnya cukup jalankan npm run start dengan Docker aktif.
+
+## Author
+Nama Kelompok: Team7
+
+Anggota Kelompok:
+
+Khairul Rijal Syauqi         – 123140143
+Falih Faiq Fadhlurrahman     – 123140129
+Muhammad Daffansyah Desuandi – 123140127
